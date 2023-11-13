@@ -1,0 +1,13 @@
+M_TIPO: "mul_m"
+M_SELECT: "MI"
+M_CLASIF: "RF"
+P_FICHERO: "param_0000_1466_mul_m_MI_RF.yaml"
+R_FICHERO: "resultados_1466"
+M_FICHERO: "metricas_1466"
+PRE_DATA_FILE: "rows_transpose_norm_by_gene_id_with_target_num_"
+SCORING: "roc_auc_ovr"
+SEMILLA: 1466
+MAX_ITERS: 500
+eval_selector: "SelectKBest(score_func=mutual_info_classif_state)"
+eval_clasifier: "RandomForestClassifier(random_state=SEMILLA)"
+param_distributions: {'selector__k': [1000],  'clasifier__n_estimators': [200], 'clasifier__min_samples_split': [10], 'clasifier__min_samples_leaf': [5], 'clasifier__max_features': [500], 'clasifier__max_depth': [10], 'clasifier__bootstrap': [True]}

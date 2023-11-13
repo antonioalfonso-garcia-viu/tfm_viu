@@ -1,0 +1,13 @@
+M_TIPO: "mul_m"
+M_SELECT: "ANOVA"
+M_CLASIF: "SVM"
+P_FICHERO: "param_0000_6578_mul_m_ANOVA_SVM.yaml"
+R_FICHERO: "resultados_6578"
+M_FICHERO: "metricas_6578"
+PRE_DATA_FILE: "rows_transpose_norm_by_gene_id_with_target_num_"
+SCORING: "roc_auc_ovr"
+SEMILLA: 6578
+MAX_ITERS: 500
+eval_selector: "SelectKBest(score_func=f_classif)"
+eval_clasifier: "SVC(probability=True, random_state=SEMILLA)"
+param_distributions: {'selector__k': [500],  'clasifier__kernel': ['rbf'], 'clasifier__gamma': [0.01], 'clasifier__C': [100]}

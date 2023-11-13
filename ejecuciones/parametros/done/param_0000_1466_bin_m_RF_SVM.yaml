@@ -1,0 +1,13 @@
+M_TIPO: "bin_m"
+M_SELECT: "RF"
+M_CLASIF: "SVM"
+P_FICHERO: "param_0000_1466_bin_m_RF_SVM.yaml"
+R_FICHERO: "resultados_1466"
+M_FICHERO: "metricas_1466"
+PRE_DATA_FILE: "rows_transpose_norm_by_gene_id_with_target_num_"
+SCORING: "roc_auc_ovr"
+SEMILLA: 1466
+MAX_ITERS: 500
+eval_selector: "SelectFromModel(estimator=RandomForestClassifier(random_state=SEMILLA), threshold=-np.inf)"
+eval_clasifier: "SVC(probability=True, random_state=SEMILLA)"
+param_distributions: {'selector__max_features': [500], 'selector__estimator__n_estimators': [200],  'clasifier__kernel': ['rbf'], 'clasifier__gamma': [0.01], 'clasifier__C': [100]}

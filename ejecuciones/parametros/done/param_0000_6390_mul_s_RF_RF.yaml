@@ -1,0 +1,13 @@
+M_TIPO: "mul_s"
+M_SELECT: "RF"
+M_CLASIF: "RF"
+P_FICHERO: "param_0000_6390_mul_s_RF_RF.yaml"
+R_FICHERO: "resultados_6390"
+M_FICHERO: "metricas_6390"
+PRE_DATA_FILE: "rows_transpose_norm_by_gene_id_with_target_num_"
+SCORING: "roc_auc_ovr"
+SEMILLA: 6390
+MAX_ITERS: 500
+eval_selector: "SelectFromModel(estimator=RandomForestClassifier(random_state=SEMILLA), threshold=-np.inf)"
+eval_clasifier: "RandomForestClassifier(random_state=SEMILLA)"
+param_distributions: {'selector__max_features': [1000], 'selector__estimator__n_estimators': [100],  'clasifier__n_estimators': [200], 'clasifier__min_samples_split': [10], 'clasifier__min_samples_leaf': [5], 'clasifier__max_features': [1000], 'clasifier__max_depth': [10], 'clasifier__bootstrap': [True]}

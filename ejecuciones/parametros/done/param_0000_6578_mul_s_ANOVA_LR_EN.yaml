@@ -1,0 +1,13 @@
+M_TIPO: "mul_s"
+M_SELECT: "ANOVA"
+M_CLASIF: "LR_EN"
+P_FICHERO: "param_0000_6578_mul_s_ANOVA_LR_EN.yaml"
+R_FICHERO: "resultados_6578"
+M_FICHERO: "metricas_6578"
+PRE_DATA_FILE: "rows_transpose_norm_by_gene_id_with_target_num_"
+SCORING: "roc_auc_ovr"
+SEMILLA: 6578
+MAX_ITERS: 500
+eval_selector: "SelectKBest(score_func=f_classif)"
+eval_clasifier: "LogisticRegressionCV(random_state=SEMILLA)"
+param_distributions: {'selector__k': [1000],  'clasifier__solver': ['saga'], 'clasifier__penalty': ['elasticnet'], 'clasifier__max_iter': [10000], 'clasifier__l1_ratios': [[0.1]]}

@@ -1,0 +1,13 @@
+M_TIPO: "bin_m"
+M_SELECT: "RF"
+M_CLASIF: "LR_L1"
+P_FICHERO: "param_0000_8270_bin_m_RF_LR_L1.yaml"
+R_FICHERO: "resultados_8270"
+M_FICHERO: "metricas_8270"
+PRE_DATA_FILE: "rows_transpose_norm_by_gene_id_with_target_num_"
+SCORING: "roc_auc_ovr"
+SEMILLA: 8270
+MAX_ITERS: 500
+eval_selector: "SelectFromModel(estimator=RandomForestClassifier(random_state=SEMILLA), threshold=-np.inf)"
+eval_clasifier: "LogisticRegressionCV(random_state=SEMILLA)"
+param_distributions: {'selector__max_features': [500], 'selector__estimator__n_estimators': [100],  'clasifier__solver': ['saga'], 'clasifier__penalty': ['l1'], 'clasifier__max_iter': [10000]}

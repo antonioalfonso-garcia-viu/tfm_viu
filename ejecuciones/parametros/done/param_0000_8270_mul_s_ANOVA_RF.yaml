@@ -1,0 +1,13 @@
+M_TIPO: "mul_s"
+M_SELECT: "ANOVA"
+M_CLASIF: "RF"
+P_FICHERO: "param_0000_8270_mul_s_ANOVA_RF.yaml"
+R_FICHERO: "resultados_8270"
+M_FICHERO: "metricas_8270"
+PRE_DATA_FILE: "rows_transpose_norm_by_gene_id_with_target_num_"
+SCORING: "roc_auc_ovr"
+SEMILLA: 8270
+MAX_ITERS: 500
+eval_selector: "SelectKBest(score_func=f_classif)"
+eval_clasifier: "RandomForestClassifier(random_state=SEMILLA)"
+param_distributions: {'selector__k': [500],  'clasifier__n_estimators': [200], 'clasifier__min_samples_split': [10], 'clasifier__min_samples_leaf': [5], 'clasifier__max_features': [200], 'clasifier__max_depth': [10], 'clasifier__bootstrap': [True]}

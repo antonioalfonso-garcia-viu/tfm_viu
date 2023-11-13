@@ -1,0 +1,13 @@
+M_TIPO: "mul_m"
+M_SELECT: "RF"
+M_CLASIF: "LR_L2"
+P_FICHERO: "param_0000_6191_mul_m_RF_LR_L2.yaml"
+R_FICHERO: "resultados_6191"
+M_FICHERO: "metricas_6191"
+PRE_DATA_FILE: "rows_transpose_norm_by_gene_id_with_target_num_"
+SCORING: "roc_auc_ovr"
+SEMILLA: 6191
+MAX_ITERS: 500
+eval_selector: "SelectFromModel(estimator=RandomForestClassifier(random_state=SEMILLA), threshold=-np.inf)"
+eval_clasifier: "LogisticRegressionCV(random_state=SEMILLA)"
+param_distributions: {'selector__max_features': [1000], 'selector__estimator__n_estimators': [400],  'clasifier__solver': ['lbfgs'], 'clasifier__penalty': ['l2'], 'clasifier__max_iter': [10000]}
